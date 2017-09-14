@@ -21,7 +21,7 @@ int main() {
 		numList.push_back(rand() % 999 +1);
 	}
 	
-	// creat binary tree
+	// create binary tree
     auto myTree = new Tree<int>();
 
 	// insert the array to the tree
