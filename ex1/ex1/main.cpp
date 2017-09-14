@@ -4,6 +4,8 @@
 #include "Tree.h"
 #include "unittest.h"
 
+#define NUMBERS_TO_PUSH 50
+
 int main() {
 
 	// testing
@@ -17,7 +19,7 @@ int main() {
     vector<int> numList({});
 	cout << "Array: " << endl;
 	// pick 50 random numbers
-	for (auto i=0; i<50; i++)
+	for (auto i=0; i<NUMBERS_TO_PUSH; i++)
 	{
 		auto num = rand() % 999 + 1;
 		cout << num << ", ";
