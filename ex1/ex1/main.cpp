@@ -15,14 +15,19 @@ int main() {
 	rand(); rand(); rand();
 	// create vector list to store the numbers
     vector<int> numList({});
+	cout << "Array: " << endl;
 	// pick 50 random numbers
 	for (auto i=0; i<50; i++)
 	{
-		numList.push_back(rand() % 999 +1);
+		auto num = rand() % 999 + 1;
+		cout << num << ", ";
+		numList.push_back(num);
 	}
 	
 	// create binary tree
     auto myTree = new Tree<int>();
+
+	cout << endl;
 
 	// insert the array to the tree
     for (auto num : numList)
@@ -37,7 +42,7 @@ int main() {
 		}
         
     }
-	
+	cout << "BFS Tree Order: " << endl;
 	myTree->printTreeBFSOrder();
 
 	delete myTree;
