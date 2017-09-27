@@ -5,33 +5,35 @@
 #ifndef Y01S03_QUEUEROUNDLIST_H
 #define Y01S03_QUEUEROUNDLIST_H
 
-#include <iostream>
 #include "RoundList.h"
 
 using namespace std;
 
 template<class T>
-class QueueRoundList: public RoundList<T> {
+class QueueRoundList : public RoundList<T> {
 
 public:
-	QueueRoundList() : RoundList<T>() {}
-    explicit QueueRoundList(const T &item): RoundList<T>(item) {}
+    QueueRoundList() : RoundList<T>() {}
 
-	T dequeue() {
-		if (this->getSize() == 0) 
-		{
-			throw exception("queue is empty");
-		}
-        auto poped = new T (*this->begin());
-        this->remove();
-        return *poped;
+    explicit QueueRoundList(const T &item) : RoundList<T>(item) {}
+
+    T dequeue() {
+        if (this->getSize() == 0) throw "queue is empty";
+
+        auto poped = this->begin().getPointer()->getData();
+        this->remove(this->begin());
+        return poped;
     }
 
-    void enqueue(const T &newItem) 
-	{
-		insert(newItem);
+    void enqueue(const T &newItem) {
+        this->insert(newItem, this->end());
     }
 
+    ~QueueRoundList() {
+        while (this->getSize()) {
+            this->dequeue();
+        }
+    }
 };
 
 

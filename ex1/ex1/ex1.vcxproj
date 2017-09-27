@@ -143,14 +143,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="unittest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QueueRoundList.h" />
     <ClInclude Include="RoundList.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="TreeNode.h" />
-    <ClInclude Include="unittest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
